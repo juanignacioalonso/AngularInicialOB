@@ -1,1 +1,5 @@
-<p>task-list works!</p>
+<h4>Tus tareas:</h4>
+
+<!--TODO: Replantear con directiva estructural -->
+<app-task [task]="task1" (delete)="deleteTask($event)"></app-task>
+<app-task [task]="task2" (delete)="deleteTask($event)"></app-task>
