@@ -329,11 +329,17 @@
 
  <!--<h1>Hola {{nombre}}</h1>-->
  <!--Input para trabajar con NgModel-->
- <input type="text" placeholder="Nombre del usuario" [(ngModel)]="usuario"><!--Al poner [(ngModel)] esto significa que envia y escucha informacion en este caso la variable nombre-->
- <app-saludo [nombre]="usuario" (mensajeEmiter)="recibirMensajedelHijo($event)"></app-saludo> <!--Al poner nombre entre corchetes le indicamos que el valor entre comillas es una variable-->
- <app-saludo (mensajeEmiter)="recibirMensajedelHijo($event)"></app-saludo> 
+ <!--<input type="text" placeholder="Nombre del usuario" [(ngModel)]="usuario">Al poner [(ngModel)] esto significa que envia y escucha informacion en este caso la variable nombre-->
+ <!--<app-saludo [nombre]="usuario" (mensajeEmiter)="recibirMensajedelHijo($event)"></app-saludo> Al poner nombre entre corchetes le indicamos que el valor entre comillas es una variable-->
+ <!--<app-saludo (mensajeEmiter)="recibirMensajedelHijo($event)"></app-saludo>--> 
  <!--<app-saludo nombre="Pepe"></app-saludo> Si usuamos corchetes nos referimos a valores que estan en el typeScrip sin corchetes la variable por defecto tiene ese velor-->
  <!--<app-saludo></app-saludo>-->
+
+ <!--Ejemplo de uso de servicio-->
+
+  <app-lista-contactos></app-lista-contactos>
+  <!--Ejemplo de peticion HTTP-->
+  <app-login-form></app-login-form>
   
 </div>
 
