@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';//Nos dira el contenido que abra en la URL
+import { IContacto } from 'src/app/models/contacts.interface';
 
 @Component({
   selector: 'app-contacts-detail-page',
@@ -9,6 +10,15 @@ import { ActivatedRoute } from '@angular/router';//Nos dira el contenido que abr
 export class ContactsDetailPageComponent implements OnInit {
 
   id:any|undefined;
+  contacto:IContacto={
+    id:0,
+    nombre:'',
+    apellidos:'',
+    email:'',
+    sexo:'mujer'
+
+  };
+  filtroPrevio:string='todos';
 
 
   constructor(private route:ActivatedRoute){}//inyectamos la dependencia ya que es una informacion que esta compartida por todos los componentes
@@ -22,7 +32,13 @@ export class ContactsDetailPageComponent implements OnInit {
         }
       }
     );
-   
+   // Vamos a leer tambien del State el contacto
+   if(history.state.data){
+    this.contacto=history.state.data;
+   }
+   if(history.state.filtro){
+    this.filtroPrevio=history.state.filtro;
+   }
   }
 
 }

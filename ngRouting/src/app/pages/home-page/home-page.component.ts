@@ -1,21 +1,44 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router'; //para poder navegar entre paginas por funciones
+import { NavigationExtras, Router } from '@angular/router'; //para poder navegar entre paginas por funciones
+import { IContacto } from 'src/app/models/contacts.interface';
+
 
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.scss']
+  
 })
 export class HomePageComponent implements OnInit {
+
+  token:string|null=null;
+
+  contactoSeleccionado:IContacto|undefined;
 
   constructor(private router:Router){}//ahora lo podemos inyectar
 
   ngOnInit(): void {
+
+    //Comprobar si existe el token en el sessionStorage
+    this.token=sessionStorage.getItem('token');
+
+    //Leemos del historial de navegacion
+    if(history.state.data){
+      console.log(history.state.data);
+      this.contactoSeleccionado=history.state.data
+    }
     
   }
 
   navegarAContacts():void{
-    this.router.navigate(['/contacts']); //Navegar de forma programatica
+
+    let navigationsExtras: NavigationExtras={
+      queryParams:{
+        sexo:'todos',
+      }
+    }
+
+    this.router.navigate(['/contacts'],navigationsExtras); //Navegar de forma programatica
   }
 
 }

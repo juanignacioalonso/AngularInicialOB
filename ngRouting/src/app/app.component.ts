@@ -22,3 +22,10 @@ export class AppComponent implements OnInit{
     this.router.navigate(['login']);
   }
 }
+
+
+//Paso de información entre componentes
+// 1- a traves de imputs y ouputs
+// 2- a traves de inyección de constructores de componentes hijos @ViewChild, @ContentChild o @ContentChildren
+// 3- a traves de Servicios (Promesas y Observables, etc.)--> NGRX (GESTION DEL ESTADO DE LA APLICACIÓN)
+// 4- a traves de parametrosentre rutas

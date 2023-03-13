@@ -1,6 +1,8 @@
 
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, NavigationExtras, Router,Route } from '@angular/router';
 import { IContacto } from 'src/app/models/contacts.interface';
+import { ContactoService } from 'src/app/services/contacto.service';
 
 @Component({
   selector: 'app-contacts-page',
@@ -9,31 +11,44 @@ import { IContacto } from 'src/app/models/contacts.interface';
 })
 export class ContactsPageComponent implements OnInit {
 
-  listaContactos:IContacto[]=[
-    {
-      id:0,
-      nombre:'Juan',
-      apellidos:'Alonso',
-      email:'zalbak87@gmail.com'
-    },
-    {
-      id:1,
-      nombre:'Pedro',
-      apellidos:'Martinez',
-      email:'pedro@gmail.com'
-    },
-    {
-      id:2,
-      nombre:'Guadalupe',
-      apellidos:'Montenegro',
-      email:'guada@gmail.com'
-    }
-  ]
+  filtroSexo:string='todos';
+  listaContactos:IContacto[]=[];
 
-  constructor(){}
+  constructor(private router:Router, private route:ActivatedRoute,private contactService:ContactoService){}
 
   ngOnInit(): void {
     
+    //Obtener los Query Params
+    this.route.queryParams.subscribe((params:any)=>{
+      console.log('QueryParams:',params.sexo)
+      if(params.sexo){
+        this.filtroSexo=params.sexo
+      }
+      
+      //Obtener la lista de contactos
+      this.contactService.obtenerContactos(this.filtroSexo).then(
+        (lista)=> this.listaContactos=lista
+        )
+        .catch((error)=>console.error('Hubo un error al obtener los contactos',error))
+        
+        .finally(()=>console.info('Petición de contactos terminada '))
+
+    });
+    
+    
+    
   }
+  //Ejemplo de paso de información entre componentes  a traves del ESTADO
+    volverAhome(contacto:IContacto){
+
+      let navigationExtras: NavigationExtras={
+        state:{
+          data:contacto
+        }
+      }
+
+      this.router.navigate(['/home'],navigationExtras);
+    }
+
 
 }
