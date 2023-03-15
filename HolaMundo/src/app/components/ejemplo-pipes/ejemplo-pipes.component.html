@@ -1,0 +1,55 @@
+<h1>Ejemplo PIPES nativos de Angular</h1>
+
+<!--Pipes para Fechas-->
+<h2>Pipes para Fechas</h2>
+<p>Mi cumpleaños sin PIPE es: {{dob}}</p>
+<p>Mi cumpleaños con PIPE DATE Basico es: {{dob | date}}</p>
+<p>Mi cumpleaños con PIPE DATE Formateado es: {{dob | date:"dd/MM/yyyy"}}</p>
+
+<p>Mi cumpleaños con PIPE DATE short: {{dob | date:'shortDate'}}</p>
+<p>Mi cumpleaños con PIPE DATE full: {{dob | date:'fullDate'}}</p>
+
+<p>Mi cumpleaños con PIPE DATE short/full: {{dob | date:dateFormat}}</p>
+
+<!-- PIPES de decimales-->
+<h2>PIPES de decimales</h2>
+<p>Pi 5 decimales {{numero_pi|number:'.5-5'}}</p>
+<p>Pi 2 enteros y 8 decimales {{numero_pi|number:'2.8-8'}}</p>
+
+<!-- Moneda (Currency)-->
+<h2> Moneda (Currency)</h2>
+<p>Precio del Carrito EURO: {{precioCarro|currency:'EUR'}}</p>
+<p>Precio del Carrito DOLLAR: {{precioCarro|currency:'USD'}}</p>
+<p>Precio del Carrito EURO: {{precioCarro|currency:'EUR':true:'.3-3'}}</p>
+
+<!-- JSON-->
+<h2> JSON</h2>
+<p>{{persona|json}}</p>
+<!-- Porcentajes -->
+<h2>Porcentajes</h2>
+<p>Porcentaje de votos obtenidos: {{cantidad|percent:'2.2-2'}}</p>
+<!-- SLICE -->
+<h2>SLICE</h2>
+<p>Texto demaciado largo: {{textoLargo|slice:1:10}} ...</p>
+<!--Combinacion de PIPES-->
+<h2>Combinacion de PIPES</h2>
+<p>Mi cumpleaños con PIPE DATE short/full MAYUS: {{dob | date:dateFormat | uppercase}}</p>
+<p>Mi cumpleaños con PIPE DATE short/full MINUS: {{dob | date:dateFormat | lowercase}}</p>
+
+<button (click)="cambiarFormato()">Cambiar Formato a {{cambio? 'Full':'Short'}}</button>
+
+
+<!--Mayusculas y minusculas-->
+<h2>Mayusculas y minusculas</h2>
+<p>Bienvenido , {{nombre | uppercase}}</p>
+<p>Nombre de usuario @{{nombre | lowercase}}</p>
+
+<!--PIPE personalizado (Multiplica)-->
+<h2>PIPE personalizado (Multiplica)</h2>
+<p>Resultado: {{2|multiplica:10}}</p>
+
+<!--PIPE personalizado (Calcular puntuacion)-->
+<h2>PIPE personalizado (Calcular puntuacion)</h2>
+<p>{{jugador2|calcularPuntuacion}}</p><p>{{jugador1|calcularPuntuacion}}</p>
+
+
