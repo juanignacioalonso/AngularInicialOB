@@ -9,8 +9,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class LoginPageComponent implements OnInit{
 
-  email:string='';
-  password:string='';
+  
 
   constructor(private router:Router, private autService:AuthService){}
 
@@ -23,9 +22,11 @@ export class LoginPageComponent implements OnInit{
 
   }
  
-  loginUser(){
+  loginUser(value:any){
 
-    this.autService.login(this.email,this.password).subscribe(
+    let {email,password}=value; 
+
+    this.autService.login(email,password).subscribe(
       (response)=>{
         if(response.token){
           sessionStorage.setItem('token',response.token);

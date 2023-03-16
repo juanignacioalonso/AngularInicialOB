@@ -4,7 +4,7 @@
 <div *ngFor="let contacto of listaContactos;let i=index">
     <div routerLink="{{contacto.id}}" [state]="{data:contacto,filtro:filtroSexo}">
         <h6 class="contacto">{{contacto.nombre}}</h6>
-        <button (click)="volverAhome(contacto)">Seleccionar como amigo invicible</button>
+        <button (click)="volverAhome(contacto)">Seleccionar como amigo invisible</button>
     </div>
 
 </div>

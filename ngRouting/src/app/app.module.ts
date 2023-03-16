@@ -1,16 +1,23 @@
+//Modulos
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {HttpClientModule} from '@angular/common/http'
-
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './moduls/material/material.module';
 import { AppRoutingModule } from './app-routing.module';
+import { CommonModule } from '@angular/common';
+//Componentes
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 import { ContactsPageComponent } from './pages/contacts-page/contacts-page.component';
 import { ContactsDetailPageComponent } from './pages/contacts-detail-page/contacts-detail-page.component';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { LoginFormComponent } from './components/login-form/login-form.component';
+import { NombreCompletoPipe } from './pipes/nombre-completo.pipe';
+
+
 
 
 @NgModule({
@@ -20,16 +27,27 @@ import { FormsModule } from '@angular/forms';
     LoginPageComponent,
     NotFoundPageComponent,
     ContactsPageComponent,
-    ContactsDetailPageComponent
+    ContactsDetailPageComponent,
+    LoginFormComponent,
+    NombreCompletoPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CommonModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    //Formularios Reactivos
+    ReactiveFormsModule,
+    //Modulo personalizado de angular Materials
+    MaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+
+//eve.holt@reqres.in
