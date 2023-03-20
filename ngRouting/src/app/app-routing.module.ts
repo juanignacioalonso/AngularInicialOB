@@ -7,6 +7,7 @@ import { ContactsPageComponent } from './pages/contacts-page/contacts-page.compo
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
+import { RandonContactPageComponent } from './pages/randon-contact-page/randon-contact-page.component';
 
 //El orden de las rutas importa, si hay sub rutas debe ir debajo de la que hace referencia
 
@@ -40,6 +41,11 @@ const routes: Routes = [
     path:'contacts/:id',//Forma de pasar parametros a una ruta
     component: ContactsDetailPageComponent,
     canActivate:[AuthGuard]//De esta maneta evitamos que se cargue esta ruta
+  },
+  {
+    path:'random',
+    component:RandonContactPageComponent,
+    canActivate: [AuthGuard]
   },
   {
     path:'**',

@@ -16,6 +16,9 @@ import { ContactsPageComponent } from './pages/contacts-page/contacts-page.compo
 import { ContactsDetailPageComponent } from './pages/contacts-detail-page/contacts-detail-page.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { NombreCompletoPipe } from './pipes/nombre-completo.pipe';
+import { RandomUsersComponent } from './components/random-users/random-users.component';
+import { RandonContactPageComponent } from './pages/randon-contact-page/randon-contact-page.component';
+
 
 
 
@@ -29,7 +32,10 @@ import { NombreCompletoPipe } from './pipes/nombre-completo.pipe';
     ContactsPageComponent,
     ContactsDetailPageComponent,
     LoginFormComponent,
-    NombreCompletoPipe
+    NombreCompletoPipe,
+    RandomUsersComponent,
+    RandonContactPageComponent,
+    
   ],
   imports: [
     BrowserModule,
