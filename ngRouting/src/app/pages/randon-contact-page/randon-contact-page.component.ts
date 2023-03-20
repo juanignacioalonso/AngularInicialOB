@@ -32,7 +32,7 @@ export class RandonContactPageComponent implements OnInit {
   obtenerListaContactos(n:number){
     this.randomUsersService.obtenerRandomContacts(n).subscribe(
       {
-        next:(response:Results[])=>{
+        next:(response:Results)=>{
           console.log(response);
         },
         error:(error)=>console.error(error),

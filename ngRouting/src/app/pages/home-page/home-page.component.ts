@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router'; //para poder navegar entre paginas por funciones
-import { IContacto } from 'src/app/models/contacts.interface';
+import { IRandomContact } from 'src/app/models/randomuser';
 
 
 @Component({
@@ -13,7 +13,7 @@ export class HomePageComponent implements OnInit {
 
   token:string|null=null;
 
-  contactoSeleccionado:IContacto|undefined;
+  contactoSeleccionado:IRandomContact|undefined;
 
   constructor(private router:Router){}//ahora lo podemos inyectar
 
