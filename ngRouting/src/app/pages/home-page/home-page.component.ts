@@ -38,7 +38,7 @@ export class HomePageComponent implements OnInit {
       }
     }
 
-    this.router.navigate(['/contacts'],navigationsExtras); //Navegar de forma programatica
+    this.router.navigate(['/dashboard/contacts'],navigationsExtras); //Navegar de forma programatica
   }
 
 }

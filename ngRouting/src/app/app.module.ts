@@ -18,6 +18,17 @@ import { LoginFormComponent } from './components/login-form/login-form.component
 import { NombreCompletoPipe } from './pipes/nombre-completo.pipe';
 import { RandomUsersComponent } from './components/random-users/random-users.component';
 import { RandonContactPageComponent } from './pages/randon-contact-page/randon-contact-page.component';
+import { NavComponent } from './components/nav/nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { TasksPageComponent } from './pages/tasks-page/tasks-page.component';
+import { KambanTasksComponent } from './components/kamban-tasks/kamban-tasks.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 
 
@@ -35,6 +46,10 @@ import { RandonContactPageComponent } from './pages/randon-contact-page/randon-c
     NombreCompletoPipe,
     RandomUsersComponent,
     RandonContactPageComponent,
+    NavComponent,
+    DashboardComponent,
+    TasksPageComponent,
+    KambanTasksComponent,
     
   ],
   imports: [
@@ -48,6 +63,13 @@ import { RandonContactPageComponent } from './pages/randon-contact-page/randon-c
     ReactiveFormsModule,
     //Modulo personalizado de angular Materials
     MaterialModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
+    DragDropModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,10 @@
 <h1>Tus contactos:</h1>
 
+<div *ngIf="cargando">
+    <mat-spinner></mat-spinner>
+    <h6>Cargando..</h6>
+</div>
+
 <!--Listar los contactos y poder navegar al pinchar uno de ellos al detalle del contacto-->
 <div *ngFor="let contacto of listaRandomContacts;let i=index">
     <div routerLink="{{contacto.id.name}}" [state]="{data:contacto,filtro:filtroSexo}">
@@ -7,7 +12,7 @@
             {{contacto.name.first}}
             {{contacto.name.last}}
         </h6>
-        <button (click)="volverAhome(contacto)">Seleccionar como amigo invisible</button>
+        <button mat-raised-button color='primary' (click)="volverAhome(contacto)">Seleccionar como amigo invisible</button>
     </div>
 
 </div>
@@ -19,5 +24,5 @@
     <p>Mostrando lista completa</p>
 </ng-template>
 
-<a routerLink="/home">Volver</a>
+<a routerLink="/dashboard">Volver</a>
 

@@ -17,7 +17,7 @@ export class LoginPageComponent implements OnInit{
     let token=sessionStorage.getItem('token');
 
     if(token){
-      this.router.navigate(['home']);
+      this.router.navigate(['/dashboard']);
     }
 
   }
@@ -30,7 +30,7 @@ export class LoginPageComponent implements OnInit{
       (response)=>{
         if(response.token){
           sessionStorage.setItem('token',response.token);
-          this.router.navigate(['home']);
+          this.router.navigate(['/dashboard']);
         }
       },
       (error)=>console.error("Ocurrio un error al hacer el login "+error),
