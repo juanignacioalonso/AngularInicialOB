@@ -29,6 +29,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { TasksPageComponent } from './pages/tasks-page/tasks-page.component';
 import { KambanTasksComponent } from './components/kamban-tasks/kamban-tasks.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { TaskComponent } from './components/task/task.component';
 
 
 
@@ -50,6 +51,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     DashboardComponent,
     TasksPageComponent,
     KambanTasksComponent,
+    TaskComponent,
     
   ],
   imports: [
@@ -78,4 +80,6 @@ export class AppModule { }
 
 
 
-//eve.holt@reqres.in
+// eve.holt@reqres.in
+// Project Console: https://console.firebase.google.com/project/proyecto-final-angular-db0c2/overview
+// Hosting URL: https://proyecto-final-angular-db0c2.web.app

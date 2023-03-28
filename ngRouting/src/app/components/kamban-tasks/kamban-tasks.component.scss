@@ -25,6 +25,10 @@
   font-size: 14px;
 }
 
+.completed-task{
+  background-color: rgb(210, 241, 231);
+}
+
 .list-item:last-child {
   border: none;
 }
@@ -51,3 +55,22 @@
   opacity: 0;
 }
 
+//Estilos para niveles de tareas
+
+.info_task{
+  color:rgb(89, 89, 214);
+}
+.urgent_task{
+  color:orange;
+}
+.blocking_task{
+  color:tomato;
+}
+.msg-enhorabuena{
+  color: rgb(71, 133, 71);
+  font-weight: bold;
+}
+.msg-trabajar{
+  color: tomato;
+  font-weight: bold;
+}
